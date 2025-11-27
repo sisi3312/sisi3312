@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/SendLetterScreen.css';
 import islandBackground from '../images/첫화면 섬만 있는 배경.png';
-import { categories } from '../data/sentences';
+import { categories } from '../data/categories';
 
 const SendLetterScreen = ({ onBack, onSubmit }) => {
   const [formData, setFormData] = useState({

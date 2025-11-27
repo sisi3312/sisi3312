@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/LetterScreen.css';
 import letterBackground from '../images/편지.png';
-import { categories } from '../data/sentences';
+import { categories } from '../data/categories';
 
 const LetterScreen = ({ sentence, isVisible, onClose }) => {
   const [displayedText, setDisplayedText] = useState('');
