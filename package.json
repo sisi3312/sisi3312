@@ -2,7 +2,6 @@
   "name": "si",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sisi3312.github.io/sisi3312",
   "dependencies": {
     "@supabase/supabase-js": "^2.86.0",
     "react": "^18.2.0",
