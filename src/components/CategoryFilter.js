@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/CategoryFilter.css';
-import { categories } from '../data/sentences';
+import { categories } from '../data/categories';
 
 const CategoryFilter = ({ selectedCategory, onCategoryChange }) => {
   return (

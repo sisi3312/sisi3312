@@ -4,7 +4,7 @@ import SandScreen from './components/SandScreen';
 import LetterScreen from './components/LetterScreen';
 import SendLetterScreen from './components/SendLetterScreen';
 import useRandomSentence from './hooks/useRandomSentence';
-import { sentences } from './data/sentences';
+import { supabase } from './lib/supabase';
 import './styles/global.css';
 import './App.css';
 
@@ -43,23 +43,50 @@ function App() {
     setCurrentScreen('letter');
   };
 
-  const handleSendLetter = (formData) => {
-    const newSentence = {
-      id: Date.now(), // 임시 ID
-      text: formData.text,
-      author: formData.author || '',
-      book: formData.book || '',
-      category: formData.category,
-      tags: []
-    };
+  const handleSendLetter = async (formData) => {
+    try {
+      // Supabase에 새 문장 저장
+      const { data, error } = await supabase
+        .from('sentences')
+        .insert([
+          {
+            text: formData.text,
+            author: formData.author || '',
+            book: formData.book || '',
+            category: formData.category,
+            tags: []
+          }
+        ])
+        .select()
+        .single();
 
-    const updatedSentences = [...customSentences, newSentence];
-    setCustomSentences(updatedSentences);
-    localStorage.setItem('customSentences', JSON.stringify(updatedSentences));
-    
-    alert('병편지가 성공적으로 보내졌습니다! 다른 사람들이 받아볼 수 있게 되었어요.');
-    setCurrentScreen('main');
-    setMode(null);
+      if (error) {
+        console.error('Error saving sentence:', error);
+        alert('병편지 전송 중 오류가 발생했습니다. 다시 시도해주세요.');
+        return;
+      }
+
+      // 로컬 스토리지에도 저장 (백업용)
+      const newSentence = {
+        id: data.id,
+        text: formData.text,
+        author: formData.author || '',
+        book: formData.book || '',
+        category: formData.category,
+        tags: []
+      };
+
+      const updatedSentences = [...customSentences, newSentence];
+      setCustomSentences(updatedSentences);
+      localStorage.setItem('customSentences', JSON.stringify(updatedSentences));
+      
+      alert('병편지가 성공적으로 보내졌습니다! 다른 사람들이 받아볼 수 있게 되었어요.');
+      setCurrentScreen('main');
+      setMode(null);
+    } catch (err) {
+      console.error('Error:', err);
+      alert('병편지 전송 중 오류가 발생했습니다. 다시 시도해주세요.');
+    }
   };
 
   const handleCloseMessage = () => {

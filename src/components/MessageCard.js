@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/MessageCard.css';
-import { categories } from '../data/sentences';
+import { categories } from '../data/categories';
 
 const MessageCard = ({ sentence, isVisible, onClose }) => {
   const [displayedText, setDisplayedText] = useState('');
