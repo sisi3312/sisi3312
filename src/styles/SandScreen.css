@@ -184,19 +184,27 @@
   .floating-bottle {
     width: 150px;
   }
-  
+
   .bottle-glow {
     width: 200px;
     height: 250px;
   }
-  
+
   .bottle-hint {
     font-size: 1rem;
     padding: 8px 16px;
   }
-  
+
   .wave {
     width: 150%;
+  }
+
+  .wave-1 {
+    top: 50%;
+  }
+
+  .wave-2 {
+    top: 70%;
   }
 }
 

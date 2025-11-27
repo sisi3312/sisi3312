@@ -30,6 +30,15 @@
   z-index: 1;
 }
 
+/* 데스크탑에서는 섬 배경만, 모바일에서는 폰 배경만 표시 */
+.desktop-bg {
+  display: block;
+}
+
+.mobile-bg {
+  display: none;
+}
+
 .main-wave {
   position: absolute;
   bottom: -240px;
@@ -251,6 +260,18 @@
 
 /* 모바일 반응형 */
 @media (max-width: 1023px) {
+  .desktop-bg {
+    display: none;
+  }
+
+  .mobile-bg {
+    display: block;
+  }
+
+  .main-wave {
+    bottom: -50px;
+  }
+
   .main-title {
     font-size: 2.5rem;
     letter-spacing: 2px;
@@ -277,11 +298,11 @@
 
   .category-buttons {
     gap: 12px;
-    max-width: 100%;
+    max-width: 300px;
   }
 
   .category-btn {
-    min-width: 80px;
+    min-width: 85px;
     padding: 15px 12px;
   }
 

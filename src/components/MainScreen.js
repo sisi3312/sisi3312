@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/MainScreen.css';
 import islandBackground from '../images/첫화면 섬만 있는 배경.png';
+import phoneBackground from '../images/폰 첫화면.png';
 import waveImage from '../images/첫화면 파도.png';
 
 const MainScreen = ({ onCategorySelect, onModeSelect, mode }) => {
@@ -8,10 +9,11 @@ const MainScreen = ({ onCategorySelect, onModeSelect, mode }) => {
     return (
       <div className="main-screen">
         <div className="background-container">
-          <img src={islandBackground} alt="섬 배경" className="island-background" />
+          <img src={islandBackground} alt="섬 배경" className="island-background desktop-bg" />
+          <img src={phoneBackground} alt="폰 배경" className="island-background mobile-bg" />
           <img src={waveImage} alt="파도" className="main-wave" />
         </div>
-        
+
         <div className="main-content">
           
           <div className="category-selection">
@@ -47,10 +49,11 @@ const MainScreen = ({ onCategorySelect, onModeSelect, mode }) => {
   return (
     <div className="main-screen">
       <div className="background-container">
-        <img src={islandBackground} alt="섬 배경" className="island-background" />
+        <img src={islandBackground} alt="섬 배경" className="island-background desktop-bg" />
+        <img src={phoneBackground} alt="폰 배경" className="island-background mobile-bg" />
         <img src={waveImage} alt="파도" className="main-wave" />
       </div>
-      
+
       <div className="main-content">
         <div className="mode-selection">
           <h2 className="selection-title-first">나만의 문장섬🏝️</h2>

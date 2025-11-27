@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/SendLetterScreen.css';
 import islandBackground from '../images/첫화면 섬만 있는 배경.png';
+import phoneBackground from '../images/폰 첫화면.png';
+import waveImage from '../images/첫화면 파도.png';
 import { categories } from '../data/sentences';
 
 const SendLetterScreen = ({ onBack, onSubmit }) => {
@@ -31,9 +33,11 @@ const SendLetterScreen = ({ onBack, onSubmit }) => {
   return (
     <div className="send-letter-screen">
       <div className="background-container">
-        <img src={islandBackground} alt="섬 배경" className="island-background" />
+        <img src={islandBackground} alt="섬 배경" className="island-background desktop-bg" />
+        <img src={phoneBackground} alt="폰 배경" className="island-background mobile-bg" />
+        <img src={waveImage} alt="파도" className="send-wave" />
       </div>
-      
+
       <div className="send-letter-content">
         <button className="back-button" onClick={onBack}>
           ← 뒤로가기

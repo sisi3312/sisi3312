@@ -28,6 +28,37 @@
   z-index: 1;
 }
 
+/* 데스크탑에서는 섬 배경만, 모바일에서는 폰 배경만 표시 */
+.send-letter-screen .desktop-bg {
+  display: block;
+}
+
+.send-letter-screen .mobile-bg {
+  display: none;
+}
+
+/* 파도 애니메이션 */
+.send-wave {
+  position: absolute;
+  bottom: -240px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: 2;
+  animation: waveFloat 3s ease-in-out infinite;
+}
+
+@keyframes waveFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .send-letter-content {
   position: relative;
   z-index: 10;
@@ -192,6 +223,18 @@
 
 /* 모바일 반응형 */
 @media (max-width: 1023px) {
+  .send-letter-screen .desktop-bg {
+    display: none;
+  }
+
+  .send-letter-screen .mobile-bg {
+    display: block;
+  }
+
+  .send-wave {
+    bottom: -50px;
+  }
+
   .send-letter-content {
     width: 95%;
     height: 85vh;
