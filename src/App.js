@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainScreen from './components/MainScreen';
 import SandScreen from './components/SandScreen';
 import LetterScreen from './components/LetterScreen';
 import SendLetterScreen from './components/SendLetterScreen';
+import AdminScreen from './components/AdminScreen';
 import useRandomSentence from './hooks/useRandomSentence';
 import { supabase } from './lib/supabase';
 import './styles/global.css';
 import './App.css';
 
-function App() {
+function MainApp() {
   const [currentScreen, setCurrentScreen] = useState('main'); // 'main', 'sand', 'letter', 'send'
   const [mode, setMode] = useState(null); // 'category', 'send'
   const [currentSentence, setCurrentSentence] = useState(null);
@@ -139,6 +141,17 @@ function App() {
         />
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainApp />} />
+        <Route path="/admin" element={<AdminScreen />} />
+      </Routes>
+    </Router>
   );
 }
 
