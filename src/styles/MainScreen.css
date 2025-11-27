@@ -262,6 +262,7 @@
 
   .main-content {
     gap: 30px;
+    transform: translateY(-150px);
   }
 
   .selection-title {
@@ -290,6 +291,22 @@
 
   .category-text {
     font-size: 0.9rem;
+  }
+
+  .mode-buttons {
+    gap: 20px;
+  }
+
+  .mode-btn {
+    padding: 20px 30px;
+  }
+
+  .mode-emoji {
+    font-size: 2.5rem;
+  }
+
+  .mode-text {
+    font-size: 1rem;
   }
 }
 

@@ -191,7 +191,12 @@
 }
 
 /* 모바일 반응형 */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
+  .send-letter-content {
+    width: 95%;
+    height: 85vh;
+  }
+
   .form-container {
     margin-top: 60px;
     padding: 30px 20px;
@@ -199,6 +204,10 @@
 
   .form-title {
     font-size: 1.5rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.9rem;
   }
 
   .form-row {
@@ -213,5 +222,29 @@
   .category-label {
     padding: 8px 12px;
     font-size: 0.9rem;
+  }
+
+  .category-emoji {
+    font-size: 1rem;
+  }
+
+  .submit-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* 데스크탑 반응형 */
+@media (min-width: 1024px) {
+  .form-container {
+    padding: 50px;
+  }
+
+  .form-title {
+    font-size: 2.2rem;
+  }
+
+  .form-subtitle {
+    font-size: 1.1rem;
   }
 }

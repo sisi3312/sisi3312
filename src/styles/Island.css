@@ -180,6 +180,77 @@
   padding: 20px;
 }
 
+/* 모바일 반응형 */
+@media (max-width: 1023px) {
+  .island {
+    width: 85vw;
+    max-width: 350px;
+    height: 180px;
+  }
+
+  .island-base {
+    height: 100px;
+  }
+
+  .island-sand {
+    width: 85%;
+    height: 16px;
+  }
+
+  .palm-tree {
+    right: 18%;
+    bottom: 16px;
+  }
+
+  .tree-trunk {
+    width: 12px;
+    height: 50px;
+  }
+
+  .tree-trunk::before,
+  .tree-trunk::after {
+    width: 3px;
+    height: 6px;
+  }
+
+  .tree-trunk::before {
+    top: 16px;
+  }
+
+  .tree-trunk::after {
+    top: 32px;
+  }
+
+  .palm-leaves {
+    top: -16px;
+  }
+
+  .leaf {
+    width: 32px;
+    height: 6px;
+  }
+
+  .content-overlay {
+    padding: 15px;
+  }
+
+  .wave-background {
+    height: 150px;
+  }
+
+  .wave {
+    height: 80px;
+  }
+
+  .wave2 {
+    height: 65px;
+  }
+
+  .wave3 {
+    height: 50px;
+  }
+}
+
 /* 데스크탑 반응형 */
 @media (min-width: 1024px) {
   .island {
@@ -187,26 +258,26 @@
     max-width: 600px;
     height: 300px;
   }
-  
+
   .island-base {
     height: 180px;
   }
-  
+
   .palm-tree {
     right: 15%;
     bottom: 30px;
   }
-  
+
   .tree-trunk {
     width: 20px;
     height: 80px;
   }
-  
+
   .leaf {
     width: 60px;
     height: 12px;
   }
-  
+
   .content-overlay {
     padding: 40px;
   }
